@@ -65,8 +65,6 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     ranked = score.rank(programs)
-    if args.terms != "all":
-        ranked = [p for p in ranked if p.terms == TERMS[args.terms]]
 
     if args.scope:
         found = next((p for p in ranked if p.slug == args.scope), None)
@@ -85,6 +83,9 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {d}")
             print("\nСкоуп разобран автоматически из текста описания. Сверь с правилами программы.")
         return 0
+
+    if args.terms != "all":
+        ranked = [p for p in ranked if p.terms == TERMS[args.terms]]
 
     shown = ranked if args.limit == 0 else ranked[: args.limit]
 

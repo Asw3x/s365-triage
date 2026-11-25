@@ -13,7 +13,7 @@ import re
 
 TLDS = (
     "ru|com|net|org|io|dev|tech|online|site|store|cloud|app|me|su|biz|info|pro|team|"
-    "digital|space|life|shop|agency|systems|ai|games|group"
+    "digital|space|life|shop|agency|systems|ai|games|group|tv|kz|by|uz|xyz|gg|cc|bank"
 )
 
 DOMAIN = re.compile(
